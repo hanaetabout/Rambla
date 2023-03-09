@@ -7,7 +7,7 @@
 <div class="container">
 <nav class="navbar navbar-expand-lg">
   
-    <a class="navbar-brand" href="#"><img src="{{asset('public/images/header-logo.png')}}"></a>
+    <a class="navbar-brand" href="#"><img src="{{asset('images/header-logo.png')}}"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,7 +55,7 @@ that’s pays you – The owner</h1>
 <div class="container text-left">
       <div class="row align-items-center">
         <div class="col-md-5 col-12 left-text">
-<img src="{{asset('public/images/about-img.jpg')}}">
+<img src="{{asset('images/about-img.jpg')}}">
 </div>
    <div class="col-md-7 col-12 py-0 right-text ">
 <h2>You’re in good hands</h2>

@@ -5,7 +5,7 @@
 <div class="main-page register-page">
     <div class="row justify-content-center">
 	<div class="col-12 col-md-5 col-lg-4  col-xl-3 left-col">
-	<img src="{{asset('public/images/logo.png')}} ">
+	<img src="{{asset('images/logo.png')}} ">
 	<form method="POST" class="login-form" action="{{ route('register') }}">
 	
 	     <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
@@ -71,7 +71,7 @@
     </form>
 	</div>
 		<div class="col-9 col-md-7 col-lg-8 col-xl-9 right-col">
-		<img class="img-fluid" src="{{asset('public/images/Illustration.png')}} ">
+		<img class="img-fluid" src="{{asset('images/Illustration.png')}} ">
     </div>
 </div>
 </div>

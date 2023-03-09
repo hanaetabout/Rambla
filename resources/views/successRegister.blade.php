@@ -5,7 +5,7 @@
 	<div class="success">
 
 		
-				<img src="{{asset('public/images/thumb.png')}} ">
+				<img src="{{asset('images/thumb.png')}} ">
 				<p>Your account successfully created.</p>
 		
 							 <a href="{{ route('user.dashboard')}}" type="submit" class="login">Go to Home</a>

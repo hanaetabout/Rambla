@@ -77,7 +77,7 @@
 							<th>NIF #</th>
 							<th>History</th>
 							<th class="actn-icon">
-								<img class="icon-delete deleteProperty" src="{{asset('public/images/Delete.png')}}">
+								<img class="icon-delete deleteProperty" src="{{asset('images/Delete.png')}}">
 							</th>
 						</tr>
 					</thead>
@@ -92,17 +92,17 @@
 										@if(!empty($row->owner))
 											<span  data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$row->id}}">{{$row->owner->name}}</span>
 										@else
-											<img class="icon-delete btn modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$row->id}}" src="{{asset('public/images/bg-plus.png')}}">
+											<img class="icon-delete btn modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$row->id}}" src="{{asset('images/bg-plus.png')}}">
 										@endif
 									</td>
 									<td>
 										<div class="{{$row->id.'-email'}}">
 											@if(!empty($row->owner))
-												<img src="http://rambla.pt/crm/public/images/Message.png">
+												<img src="{{asset('images/Message.png')}}">
 												{{$row->owner->email}}
 											@else
-												<img class="icon-delete" src="{{asset('public/images/bg-plus.png')}}">
-												<!--<img class="icon-delete toggle-field" src="{{asset('public/images/bg-plus.png')}}">
+												<img class="icon-delete" src="{{asset('images/bg-plus.png')}}">
+												<!--<img class="icon-delete toggle-field" src="{{asset('images/bg-plus.png')}}">
 												<input type="text" class="property-detail-field saveData" col-id="email"  id="{{$row->id}}">
 												<i class="fa fa-times" aria-hidden="true"></i>-->
 											@endif
@@ -112,15 +112,15 @@
 										<div class="{{$row->id.'-start_date'}}">
 											@if(!empty($row->start_date))
 												<div class="parent_sd float-start me-2">
-													<img src="http://rambla.pt/crm/public/images/Calendar.png">
+													<img src="{{asset('images/Calendar.png')}}">
 													{{\Carbon\Carbon::parse($row->start_date)->format('Y-m-d')}}
 												</div>
 												
-												<img class="icon-delete toggle-field" src="{{asset('public/images/bg-plus.png')}}">
+												<img class="icon-delete toggle-field" src="{{asset('images/bg-plus.png')}}">
 												<input type="date" class="property-detail-field saveData" col-id="start_date" id="{{$row->id}}">
 												<i class="fa fa-times" aria-hidden="true"></i>
 											@else
-												<img class="icon-delete toggle-field" src="{{asset('public/images/bg-plus.png')}}">
+												<img class="icon-delete toggle-field" src="{{asset('images/bg-plus.png')}}">
 												<input type="date" class="property-detail-field saveData" col-id="start_date" id="{{$row->id}}">
 												<i class="fa fa-times" aria-hidden="true"></i>
 											@endif
@@ -131,8 +131,8 @@
 											@if(!empty($row->owner))
 												#{{$row->owner->nif}}
 											@else
-												<img class="icon-delete" src="{{asset('public/images/bg-plus.png')}}">
-												<!--<img class="icon-delete toggle-field" src="{{asset('public/images/bg-plus.png')}}">
+												<img class="icon-delete" src="{{asset('images/bg-plus.png')}}">
+												<!--<img class="icon-delete toggle-field" src="{{asset('images/bg-plus.png')}}">
 												<input type="text" class="property-detail-field saveData" col-id="nif" id="{{$row->id}}">
 												<i class="fa fa-times" aria-hidden="true"></i>-->
 											@endif
@@ -284,11 +284,11 @@
 													<div class="chtng">
 														<p>{{$chat->text}}</p>
 														@if(!empty($chat->media))
-															<img src="{{asset('public/storage/'.$chat->media)}}" alt="media" width="40px" height="40px"/>
+															<img src="{{asset('storage/'.$chat->media)}}" alt="media" width="40px" height="40px"/>
 														@endif
 													</div>
 													<div class="users">
-														<img src="{{asset('public/storage/'.$sender->avatar)}}"/>
+														<img src="{{asset('storage/'.$sender->avatar)}}"/>
 														<div class="date">
 															<p>{{date('d M, Y / H:i A',strtotime($chat->created_at))}}</p>
 															<i class="fa-solid fa-ellipsis"></i>
@@ -345,8 +345,8 @@
 				</div>
 				<div class="card-body mob-card d-flex justify-content-between">
 					<div class="left-cntnt">
-						<img src="{{asset('public/images/Message.png')}}"> arroragaur@gmail.com
-						<br><img src="http://rambla.pt/crm/public/images/Calendar.png"> 12 Dec, 2020
+						<img src="{{asset('images/Message.png')}}"> arroragaur@gmail.com
+						<br><img src="{{asset('images/Calendar.png')}}"> 12 Dec, 2020
 					</div>
 					<div class="right-cntnt">
 						<div class="updated">
@@ -377,8 +377,8 @@
 				</div>
 				<div class="card-body mob-card d-flex justify-content-between">
 					<div class="left-cntnt">
-						<img src="{{asset('public/images/Message.png')}}"> arroragaur@gmail.com
-						<br><img src="{{asset('public/images/Calendar.png')}}"> 12 Dec, 2020
+						<img src="{{asset('images/Message.png')}}"> arroragaur@gmail.com
+						<br><img src="{{asset('images/Calendar.png')}}"> 12 Dec, 2020
 					</div>
 					<div class="right-cntnt">
 						<div class="updated">
@@ -402,7 +402,7 @@
 									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 								</div>
 								<div class="users">
-									<img src="{{asset('public/images/chat.png')}}">
+									<img src="{{asset('images/chat.png')}}">
 									<div class="date">
 										<p>
 											10 Dec, 2022 / 09:07 PM
@@ -414,7 +414,7 @@
 									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 								</div>
 								<div class="users">
-									<img src="{{asset('public/images/chat.png')}}">
+									<img src="{{asset('images/chat.png')}}">
 									<div class="date">
 										<p>10 Dec, 2022 / 09:07 PM</p>
 										<i class="fa-solid fa-ellipsis"></i>
@@ -455,8 +455,8 @@
 				</div>
 				<div class="card-body mob-card d-flex justify-content-between">
 					<div class="left-cntnt">
-						<img src="{{asset('public/images/Message.png')}}"> arroragaur@gmail.com
-						<br><img src="{{asset('public/images/Calendar.png')}}"> 12 Dec, 2020
+						<img src="{{asset('images/Message.png')}}"> arroragaur@gmail.com
+						<br><img src="{{asset('images/Calendar.png')}}"> 12 Dec, 2020
 					</div>
 					<div class="right-cntnt">
 						<div class="updated">
@@ -524,9 +524,9 @@ $(document).ready(function () {
 				success:function(response){
 					if(response.status == 1){
 						if(response.data.type == 'email'){
-							$('.'+response.data.id+'-'+response.data.type).html('<img src="http://rambla.pt/crm/public/images/Message.png">'+response.data.data);
+							$('.'+response.data.id+'-'+response.data.type).html('<img src="http://rambla.pt/crm/images/Message.png">'+response.data.data);
 						}else if(response.data.type == 'start_date'){
-							$('.'+response.data.id+'-'+response.data.type).html('<div class="parent_sd float-start me-2"><img src="http://rambla.pt/crm/public/images/Calendar.png">'+response.data.data+'</div><img class="icon-delete toggle-field" src="{{asset('public/images/bg-plus.png')}}"><input type="date" class="property-detail-field saveData" col-id="start_date" id="'+property_id+'"><i class="fa fa-times" aria-hidden="true"></i>');
+							$('.'+response.data.id+'-'+response.data.type).html('<div class="parent_sd float-start me-2"><img src="{{asset('images/Calendar.png')}}">'+response.data.data+'</div><img class="icon-delete toggle-field" src="{{asset('images/bg-plus.png')}}"><input type="date" class="property-detail-field saveData" col-id="start_date" id="'+property_id+'"><i class="fa fa-times" aria-hidden="true"></i>');
 							$('.'+property_id+'-start_date .fa-times').hide();
 						}else{
 							$('.'+response.data.id+'-'+response.data.type).text(response.data.data);
@@ -556,9 +556,9 @@ $(document).ready(function () {
 				success:function(response){
 					if(response.status == 1){
 						if(response.data.type == 'email'){
-							$('.'+response.data.id+'-'+response.data.type).html('<img src="http://rambla.pt/crm/public/images/Message.png">'+response.data.data);
+							$('.'+response.data.id+'-'+response.data.type).html('<img src="{{asset('images/Message.png')}}">'+response.data.data);
 						}else if(response.data.type == 'start_date'){
-							$('.'+response.data.id+'-'+response.data.type).html('<img src="http://rambla.pt/crm/public/images/Calendar.png">'+response.data.data);
+							$('.'+response.data.id+'-'+response.data.type).html('<img src="{{asset('images/Calendar.png')}}">'+response.data.data);
 						}else{
 							$('.'+response.data.id+'-'+response.data.type).text(response.data.data);
 						}
@@ -600,10 +600,10 @@ $(document).ready(function () {
 						//console.log(url);return false;
 						t.row.add(['<input id="mce-group[19]-19-2" type="checkbox" name="group[19][32]" value="32"/>',
 							'<a id="p_text_'+data.id+'" href="'+url+'">'+address+'</a>',
-							'<img class="icon-delete btn modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop'+data.id+'" src="{{asset('public/images/bg-plus.png')}}">',
-							'<div class="'+data.id+'-email"><img class="icon-delete" src="{{asset('public/images/bg-plus.png')}}"></div>',
-							'<div class="'+data.id+'-start_date"><img class="icon-delete toggle-field" src="{{asset('public/images/bg-plus.png')}}"><input type="date" class="property-detail-field saveData" col-id="start_date" id="'+data.id+'"><i class="fa fa-times" aria-hidden="true"></i></div>',
-							'<div class="'+data.id+'-nif"><img class="icon-delete" src="{{asset('public/images/bg-plus.png')}}"></div>',
+							'<img class="icon-delete btn modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop'+data.id+'" src="{{asset('images/bg-plus.png')}}">',
+							'<div class="'+data.id+'-email"><img class="icon-delete" src="{{asset('images/bg-plus.png')}}"></div>',
+							'<div class="'+data.id+'-start_date"><img class="icon-delete toggle-field" src="{{asset('images/bg-plus.png')}}"><input type="date" class="property-detail-field saveData" col-id="start_date" id="'+data.id+'"><i class="fa fa-times" aria-hidden="true"></i></div>',
+							'<div class="'+data.id+'-nif"><img class="icon-delete" src="{{asset('images/bg-plus.png')}}"></div>',
 							'<div class="history latest-chat-status-'+data.id+'"><a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample'+data.id+'" role="button" aria-controls="offcanvasExample'+data.id+'"> No history </a></div>',
 							'<div class="dropdown dot"><button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis"></i></button><ul class="dropdown-menu"><li><a id="'+address+'" pro_id= "'+data.id+'" class="dropdown-item edit_property" data-bs-toggle="modal" href="#exampleModalToggle2" role="button">Edit</a></li><li><a class="dropdown-item" href="'+url+'">View</a></li><li><a class="dropdown-item deleteSingleProperty" id="'+data.id+'" href="#">Delete</a></li></ul></div>'
 						]).draw();	

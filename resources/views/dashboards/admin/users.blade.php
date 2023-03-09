@@ -29,10 +29,10 @@
 									<tr>
 										<td> {{$i}}</td>
 										<td>{{$row->name}}</td>
-										<td><img src="{{asset('public/images/Message.png')}}">{{$row->email}}</td>
+										<td><img src="{{asset('images/Message.png')}}">{{$row->email}}</td>
 										<td> {{($row->role_id == 1 ? 'Admin' : 'Client')}}</td>
-										<td><img src="http://rambla.pt/crm/public/images/Calendar.png"> {{$row->last_seen}}</td>
-										<td><img src="http://rambla.pt/crm/public/images/Calendar.png"> {{$row->created_at}}</td>
+										<td><img src="{{asset('images/Calendar.png')}}"> {{$row->last_seen}}</td>
+										<td><img src="{{asset('images/Calendar.png')}}"> {{$row->created_at}}</td>
 										<td>
 											<a href="javascript:void(0);" class="approveUser app{{$row->id}}" id="{{$row->id}}">
 												<button type="button" class="btn {{($row->approve == 1 ? 'reject' : 'final')}}">{{($row->approve == 1 ? 'Unapprove' : 'Approve')}}</button>

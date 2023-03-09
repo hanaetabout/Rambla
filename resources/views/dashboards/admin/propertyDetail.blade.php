@@ -7,8 +7,8 @@
 		
 			<h2 class="card-title">Property {{ (!empty($properties->owner) ? $properties->owner->nif : '') }}<br> <b>- {{ ($properties->address) }}</b></h2>
 			<div class="right-img">
-				<a href="{{route('admin.downloadpdfview',[$properties->id,($revenueY ? $revenueY : \Carbon\Carbon::now()->format('Y')),($expenseY ? $expenseY : \Carbon\Carbon::now()->format('Y'))])}}"><img class="img" src="{{asset('public/images/download.png')}}"></a>
-				<img src="{{asset('public/images/printer.png')}}"type='button' id='btn' value='Print' onclick='printDiv();'>
+				<a href="{{route('admin.downloadpdfview',[$properties->id,($revenueY ? $revenueY : \Carbon\Carbon::now()->format('Y')),($expenseY ? $expenseY : \Carbon\Carbon::now()->format('Y'))])}}"><img class="img" src="{{asset('images/download.png')}}"></a>
+				<img src="{{asset('images/printer.png')}}"type='button' id='btn' value='Print' onclick='printDiv();'>
 			</div>
 		</div>
 		<div class="card ">
@@ -62,14 +62,14 @@
 						<div class="gallery-popup">
 							<div class="row22">
 								<div class="column">
-									<img src="{{asset('public/images/gallary.png')}}" @if(count($properties->propertyGallery) > 0) onclick="openModal();currentSlide(1)" @else onclick="emptyGallery()" @endif>
+									<img src="{{asset('images/gallary.png')}}" @if(count($properties->propertyGallery) > 0) onclick="openModal();currentSlide(1)" @else onclick="emptyGallery()" @endif>
 									<label class="form__container" id="upload-container">
 										<form method="post" action="{{route('admin.addPropGallery')}}" enctype="multipart/form-data">
 											@csrf
 											<input type="hidden" name="property_id" value="{{$properties->id}}">
 											<input type="file" style="display:none;" class="form__file" id="upload-files" name="media[]" multiple accept="image/jpeg,image/png" onchange="this.form.submit()">
 										</form>
-										<!--<img class="jan" src="{{asset('public/images/grey-plus.png')}}">-->
+										<!--<img class="jan" src="{{asset('images/grey-plus.png')}}">-->
 										<div class="jan">+</div>
 									</label>
 								</div>
@@ -81,7 +81,7 @@
 									@if(!empty($properties->propertyGallery))
 										@foreach($properties->propertyGallery as $doc)
 											<div class="mySlides">
-											  <img src="{{asset('public/storage/'.$doc->media)}}" style="width:100%">
+											  <img src="{{asset('storage/'.$doc->media)}}" style="width:100%">
 											</div>
 										@endforeach
 									@endif
@@ -98,7 +98,7 @@
 											@php $s = 1; @endphp
 											@foreach($properties->propertyGallery as $doc)
 												<div class="column">
-												  <img class="demo cursor" src="{{asset('public/storage/'.$doc->media)}}" style="width:100%" onclick="currentSlide({{$s}})">
+												  <img class="demo cursor" src="{{asset('storage/'.$doc->media)}}" style="width:100%" onclick="currentSlide({{$s}})">
 												</div>
 												@php $s++; @endphp
 											@endforeach
@@ -118,7 +118,7 @@
 							<div class="single-col">
 								<div class="col-txt">
 									<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModal{{$key}}">
-										<img src="{{asset('public/images/pdf.png')}}">
+										<img src="{{asset('images/pdf.png')}}">
 										<p> {{$doc}}</p>
 									</a>
 								</div>
@@ -147,8 +147,8 @@
 											@if($docc->category == $key)
 												<div class="col-txt cross-css">
 													<div class="doc-cross deleteDocumentJs" id="{{$properties->id}}" data="1" row-id="{{$docc->id}}"><i class="fa fa-times" aria-hidden="true"></i></div>
-													<a href="{{asset('public/storage/'.$docc->document)}}" target="_blank">
-														<img src="{{asset('public/images/pdf.png')}}">
+													<a href="{{asset('storage/'.$docc->document)}}" target="_blank">
+														<img src="{{asset('images/pdf.png')}}">
 														<p class="pdf-text"> {{$docc->document_name}}</p>
 													</a>
 												</div>													
@@ -169,8 +169,8 @@
 								@if($doc->category == 5)
 									<div class="col-txt">
 										<div class="doc-cross deleteDocumentJs" id="{{$properties->id}}" data="2" row-id="{{$doc->id}}"><i class="fa fa-times" aria-hidden="true"></i></div>
-										<a href="{{asset('public/storage/'.$doc->document)}}" target="_blank">
-											<img src="{{asset('public/images/pdf.png')}}">
+										<a href="{{asset('storage/'.$doc->document)}}" target="_blank">
+											<img src="{{asset('images/pdf.png')}}">
 											<p> {{$doc->document_name}}</p>
 										</a>
 									</div>
@@ -188,7 +188,7 @@
 									<input type="hidden" name="category" value="5">
 									<input type="file" style="display:none;" class="form__file" id="upload-files" name="prop_doc[]" multiple accept="application/pdf" onchange="this.form.submit()">
 								</form>
-								<img src="{{asset('public/images/bg-plus.png')}}">
+								<img src="{{asset('images/bg-plus.png')}}">
 								<p style="color:#D6DFF0">
 									 Add <br>
 									 documents
@@ -224,9 +224,9 @@
 										<div class="d-print-none">
 									@if(empty($Transaction->document))									
 										<div class="first-row">
-											<img src="{{asset('public/images/g-pdf.png')}}">
+											<img src="{{asset('images/g-pdf.png')}}">
 										</div>
-										<!--<img class="jan" src="{{asset('public/images/jan.png')}}">-->
+										<!--<img class="jan" src="{{asset('images/jan.png')}}">-->
 										<label class="form__container" id="upload-container">
 											<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 												@csrf
@@ -240,11 +240,11 @@
 									@else
 										<div class="first-row fonts">
 											<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocs{{$key}}">
-												<img src="{{asset('public/images/pdf.png')}}">
+												<img src="{{asset('images/pdf.png')}}">
 												<p>Payment Proof</p>
 											</a>
 										</div>
-										<!--<img class="jan" src="{{asset('public/images/jan.png')}}"style="background:#fff;">-->
+										<!--<img class="jan" src="{{asset('images/jan.png')}}"style="background:#fff;">-->
 										<label class="form__container" id="upload-container">
 											<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 												@csrf
@@ -273,8 +273,8 @@
 											@foreach(json_decode($Transaction->document) as $k => $split)
 												<div class="col-txt">
 													<div class="doc-cross deleteDocumentJs" id="{{$properties->id}}" data="3" row-id="{{$Transaction->id}}_{{$k}}_document"><i class="fa fa-times" aria-hidden="true"></i></div>
-													<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-														<img src="{{asset('public/images/pdf.png')}}">
+													<a href="{{asset('storage/'.$split)}}" target="_blank">
+														<img src="{{asset('images/pdf.png')}}">
 														<p class="pdf-text"> {{__('Payment Proof')}} ({{$sn}})</p>
 													</a>
 												</div>
@@ -323,9 +323,9 @@
 										<div class="d-print-none">	
 											@if(empty($Transaction->document))	
 												<div class="first-row">
-													<img src="{{asset('public/images/g-pdf.png')}}">
+													<img src="{{asset('images/g-pdf.png')}}">
 												</div>
-												<!--<img class="jan" src="{{asset('public/images/jan.png')}}">-->
+												<!--<img class="jan" src="{{asset('images/jan.png')}}">-->
 												<label class="form__container" id="upload-container">
 													<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 														@csrf
@@ -339,11 +339,11 @@
 											@else
 												<div class="first-row elect fonts">
 													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocsedocument{{$key}}">
-														<img src="{{asset('public/images/pdf.png')}}" >
+														<img src="{{asset('images/pdf.png')}}" >
 														<p>Invoices</p>
 													</a>
 												</div>
-												<!--<img class="jan" src="{{asset('public/images/jan.png')}}"style="background:#fff;">-->
+												<!--<img class="jan" src="{{asset('images/jan.png')}}"style="background:#fff;">-->
 												<label class="form__container" id="upload-container">
 													<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 														@csrf
@@ -371,8 +371,8 @@
 													@foreach(json_decode($Transaction->document) as $k => $split)
 														<div class="col-txt">
 															<div class="doc-cross deleteDocumentJs" id="{{$properties->id}}" data="3" row-id="{{$Transaction->id}}_{{$k}}_document"><i class="fa fa-times" aria-hidden="true"></i></div>
-															<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-																<img src="{{asset('public/images/pdf.png')}}">
+															<a href="{{asset('storage/'.$split)}}" target="_blank">
+																<img src="{{asset('images/pdf.png')}}">
 																<p class="pdf-text"> {{__('Invoices')}} ({{$snn}})</p>
 															</a>
 														</div>
@@ -391,9 +391,9 @@
 										<div class="d-print-none">	
 											@if(empty($Transaction->condominium))	
 												<div class="first-row sec">
-													<img src="{{asset('public/images/g-pdf.png')}}">
+													<img src="{{asset('images/g-pdf.png')}}">
 												</div>
-												<!--<img class="jan" src="{{asset('public/images/jan.png')}}">-->
+												<!--<img class="jan" src="{{asset('images/jan.png')}}">-->
 												<label class="form__container" id="upload-container">
 													<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 														@csrf
@@ -407,11 +407,11 @@
 											@else
 												<div class="first-row fonts">
 													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocsecondominium{{$key}}">
-														<img src="{{asset('public/images/pdf.png')}}" >
+														<img src="{{asset('images/pdf.png')}}" >
 														<p>Invoices</p>
 													</a>
 												</div>
-												<!--<img class="jan" src="{{asset('public/images/jan.png')}}"style="background:#fff;">-->
+												<!--<img class="jan" src="{{asset('images/jan.png')}}"style="background:#fff;">-->
 												<label class="form__container" id="upload-container">
 													<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 														@csrf
@@ -439,8 +439,8 @@
 													@foreach(json_decode($Transaction->condominium) as $k => $split)
 														<div class="col-txt">
 															<div class="doc-cross deleteDocumentJs" id="{{$properties->id}}" data="3" row-id="{{$Transaction->id}}_{{$k}}_condominium"><i class="fa fa-times" aria-hidden="true"></i></div>
-															<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-																<img src="{{asset('public/images/pdf.png')}}">
+															<a href="{{asset('storage/'.$split)}}" target="_blank">
+																<img src="{{asset('images/pdf.png')}}">
 																<p class="pdf-text"> {{__('Invoices')}} ({{$snn}})</p>
 															</a>
 														</div>
@@ -460,9 +460,9 @@
 										<div class="d-print-none">	
 											@if(empty($Transaction->other))	
 												<div class="first-row other">
-													<img src="{{asset('public/images/g-pdf.png')}}">
+													<img src="{{asset('images/g-pdf.png')}}">
 												</div>
-												<!--<img class="jan" src="{{asset('public/images/jan.png')}}">-->
+												<!--<img class="jan" src="{{asset('images/jan.png')}}">-->
 												<label class="form__container" id="upload-container">
 													<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 														@csrf
@@ -476,11 +476,11 @@
 											@else
 												<div class="first-row fonts">
 													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocseother{{$key}}">
-														<img src="{{asset('public/images/pdf.png')}}" >
+														<img src="{{asset('images/pdf.png')}}" >
 														<p>Invoices</p>
 													</a>
 												</div>
-												<!--<img class="jan" src="{{asset('public/images/jan.png')}}"style="background:#fff;">-->
+												<!--<img class="jan" src="{{asset('images/jan.png')}}"style="background:#fff;">-->
 												<label class="form__container" id="upload-container">
 													<form method="post" action="{{route('admin.addPropDocument')}}" enctype="multipart/form-data">
 														@csrf
@@ -508,8 +508,8 @@
 													@foreach(json_decode($Transaction->other) as $k => $split)
 														<div class="col-txt">
 															<div class="doc-cross deleteDocumentJs" id="{{$properties->id}}" data="3" row-id="{{$Transaction->id}}_{{$k}}_other"><i class="fa fa-times" aria-hidden="true"></i></div>
-															<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-																<img src="{{asset('public/images/pdf.png')}}">
+															<a href="{{asset('storage/'.$split)}}" target="_blank">
+																<img src="{{asset('images/pdf.png')}}">
 																<p class="pdf-text"> {{__('Invoices')}} ({{$snn}})</p>
 															</a>
 														</div>

@@ -11,26 +11,26 @@
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
         <!-- Scripts -->
-		<link rel="stylesheet" href="{{ asset('public/build/assets/app-67dcdfd2.css') }}"> 
+		<link rel="stylesheet" href="{{ asset('build/assets/app-67dcdfd2.css') }}"> 
 		<!---<link rel="stylesheet" href="{{ asset('public/css/custom-style.css') }}">-->
-		<link rel="stylesheet" href="{{ asset('public/css/sidebar-css.css') }}"> 
+		<link rel="stylesheet" href="{{ asset('css/sidebar-css.css') }}"> 
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> 
-		<link rel="stylesheet" href="{{ asset('public/css/alertify.min.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}"/>
 		
-		<script src="{{ asset('public/build/assets/app-903266c5.js') }}"></script>
+		<script src="{{ asset('build/assets/app-903266c5.js') }}"></script>
 		
-		<script src="{{ asset('public/js/jquery-3.6.3.js') }}"></script>
+		<script src="{{ asset('js/jquery-3.6.3.js') }}"></script>
 		
 		<script src="https://kit.fontawesome.com/a6ba34a382.js" crossorigin="anonymous"></script>
 	
   
 		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-		<script src="{{ asset('public/js/alertify.min.js') }}"></script>
+		<script src="{{ asset('js/alertify.min.js') }}"></script>
 		
 		
-		<script src="{{ asset('public/js/custom-js.js') }}"></script>
-		<script src="{{ asset('public/js/sidebar-js.js') }}"></script>
+		<script src="{{ asset('js/custom-js.js') }}"></script>
+		<script src="{{ asset('js/sidebar-js.js') }}"></script>
 
 
     </head>

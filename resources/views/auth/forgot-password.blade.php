@@ -5,7 +5,7 @@
     <form method="POST" class="forgot" action="{{ route('password.email') }}">
         @csrf
 		<div class="reset-pswd">
-<a href="#" class="sidebar-logo"><img src="http://rambla.pt/crm/public/images/black-logo.png"></a>
+<a href="#" class="sidebar-logo"><img src="{{asset('images/black-logo.png')}}"></a>
         <!-- Email Address -->
         <div class="mail">
             <x-input-label  for="email" :value="__('Email')" />

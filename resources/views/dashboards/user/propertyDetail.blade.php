@@ -9,8 +9,8 @@
                    #{{(!empty($property->owner->nif))? $property->owner->nif : "" }}  <br> <b>-{{(!empty($property->address))? $property->address : "" }}    </b></h2>
 					     @endif
 			<div class="right-img">
-					<a href="{{route('user.downloadpdfview',[$property->id,($revenueY ? $revenueY : \Carbon\Carbon::now()->format('Y')),($expenseY ? $expenseY : \Carbon\Carbon::now()->format('Y'))])}}"><img class="img" src="{{asset('public/images/download.png')}}"></a>
-				<img src="{{asset('public/images/printer.png')}}"  type='button' id='btn' value='Print' onclick='printDiv();'>
+					<a href="{{route('user.downloadpdfview',[$property->id,($revenueY ? $revenueY : \Carbon\Carbon::now()->format('Y')),($expenseY ? $expenseY : \Carbon\Carbon::now()->format('Y'))])}}"><img class="img" src="{{asset('images/download.png')}}"></a>
+				<img src="{{asset('images/printer.png')}}"  type='button' id='btn' value='Print' onclick='printDiv();'>
 			</div>
 		</div>
 		<div class="card ">
@@ -40,7 +40,7 @@
 						<div class="gallery-popup">
 						  <div class="row22">
 							 <div class="column">
-								<img src="{{asset('public/images/gallary.png')}}" @if(count($property->propertyGallery) > 0) onclick="openModal();currentSlide(1)" @else onclick="emptyGallery()" @endif>
+								<img src="{{asset('images/gallary.png')}}" @if(count($property->propertyGallery) > 0) onclick="openModal();currentSlide(1)" @else onclick="emptyGallery()" @endif>
 							 </div>
 						  </div>
 					  
@@ -52,7 +52,7 @@
 										@foreach($property->propertyGallery as $key=>$img)
 											@if(pathinfo(parse_url($img->media, PHP_URL_PATH),PATHINFO_EXTENSION) != 'pdf')
 												<div class="mySlides">
-												  <img src="{{asset('public/storage/'.$img->media)}}" style="width:100%">
+												  <img src="{{asset('storage/'.$img->media)}}" style="width:100%">
 												</div>
 											@endif
 										@endforeach
@@ -70,7 +70,7 @@
 											@foreach($property->propertyGallery as $key=>$img)
 												@if(pathinfo(parse_url($img->media, PHP_URL_PATH),PATHINFO_EXTENSION) != 'pdf')
 													<div class="column">
-													  <img class="demo cursor" src="{{asset('public/storage/'.$img->media)}}" style="width:100%" onclick="currentSlide({{$key}})">
+													  <img class="demo cursor" src="{{asset('storage/'.$img->media)}}" style="width:100%" onclick="currentSlide({{$key}})">
 													</div>
 													
 												@endif
@@ -87,7 +87,7 @@
 						@foreach($docs as $key=>$doc)
 							<div class="col-txt">
 								 <a data-bs-toggle="modal" data-bs-target="#exampleModal{{$key}}" target="_blank">
-										<img src="{{asset('public/images/pdf.png')}}">
+										<img src="{{asset('images/pdf.png')}}">
 										<p>{{$doc}}</p>
 								 </a>
 							</div>
@@ -105,8 +105,8 @@
 											@foreach($property->propertyDocuments as $docc)
 												@if($docc->category == $key)
 													<div class="col-txt">
-														<a href ="{{asset('public/storage/'.$docc->document)}}" target="_blank">
-															<img src="{{asset('public/images/pdf.png')}}">
+														<a href ="{{asset('storage/'.$docc->document)}}" target="_blank">
+															<img src="{{asset('images/pdf.png')}}">
 															<p class="pdf-text">{{$docc->document_name}}</p>
 														</a>
 													</div>
@@ -127,8 +127,8 @@
 							@foreach($property->propertyDocuments as $doc)
 								@if($doc->category == 5)
 									<div class="col-txt">
-										<a href="{{asset('public/storage/'.$doc->document)}}" target="_blank">
-										<img src="{{asset('public/images/pdf.png')}}">
+										<a href="{{asset('storage/'.$doc->document)}}" target="_blank">
+										<img src="{{asset('images/pdf.png')}}">
 										<p> {{$doc->document_name}}</p>
 										</a>
 									</div>
@@ -170,17 +170,17 @@
 										@if(!empty($Transaction->document))
 										<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocs{{$key}}">
 											 <br>
-											  <img src="{{asset('public/images/pdf.png')}}">
+											  <img src="{{asset('images/pdf.png')}}">
 											 <br>
 											  <p>Payment Proof</p>
 										  	</a>
 										@else
 										
-										      <img src="{{asset('public/images/g-pdf.png')}}">
+										      <img src="{{asset('images/g-pdf.png')}}">
 							            
 										@endif
 									 </div>
-										   <img class="jan" src="{{asset('public/images/jan.png')}}" style="background:#fff;">
+										   <img class="jan" src="{{asset('images/jan.png')}}" style="background:#fff;">
 										</div>
 									 </div>
 									 
@@ -196,8 +196,8 @@
 											@php $sn = 1; @endphp
 											@foreach(json_decode($Transaction->document) as $split)
 												<div class="col-txt">
-													<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-														<img src="{{asset('public/images/pdf.png')}}">
+													<a href="{{asset('storage/'.$split)}}" target="_blank">
+														<img src="{{asset('images/pdf.png')}}">
 														<p class="pdf-text"> {{__('Payment Proof')}} ({{$sn}})</p>
 													</a>
 												</div>
@@ -246,14 +246,14 @@
 											<div class="first-row fonts">
 												@if(!empty($Transaction->document))
 													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocsedocument{{$key}}">
-														<img src="{{asset('public/images/pdf.png')}}" >
+														<img src="{{asset('images/pdf.png')}}" >
 														<p>Invoices</p>
 													</a>
 												@else
-													<img src="{{asset('public/images/g-pdf.png')}}">
+													<img src="{{asset('images/g-pdf.png')}}">
 												@endif
 											</div>
-											<img class="jan" src="{{asset('public/images/jan.png')}}" style="background:#fff;">
+											<img class="jan" src="{{asset('images/jan.png')}}" style="background:#fff;">
 										</div>
 										
 					
@@ -262,14 +262,14 @@
 											<div class="first-row fonts">
 												@if(!empty($Transaction->condominium))
 													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocsecondominium{{$key}}">
-														<img src="{{asset('public/images/pdf.png')}}" >
+														<img src="{{asset('images/pdf.png')}}" >
 														<p>Invoices</p>
 													</a>
 												@else
-													<img src="{{asset('public/images/g-pdf.png')}}">
+													<img src="{{asset('images/g-pdf.png')}}">
 												@endif
 											</div>
-											<img class="jan" src="{{asset('public/images/jan.png')}}" style="background:#fff;">
+											<img class="jan" src="{{asset('images/jan.png')}}" style="background:#fff;">
 										</div>
 										
 										
@@ -278,14 +278,14 @@
 											<div class="first-row fonts">
 												@if(!empty($Transaction->other))
 													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#documentModaldocseother{{$key}}">
-														<img src="{{asset('public/images/pdf.png')}}" >
+														<img src="{{asset('images/pdf.png')}}" >
 														<p>Invoices</p>
 													</a>
 												@else
-													<img src="{{asset('public/images/g-pdf.png')}}">
+													<img src="{{asset('images/g-pdf.png')}}">
 												@endif
 											</div>
-											<img class="jan" src="{{asset('public/images/jan.png')}}" style="background:#fff;">
+											<img class="jan" src="{{asset('images/jan.png')}}" style="background:#fff;">
 										</div>
 									</div>
 									
@@ -301,8 +301,8 @@
 												@php $snn = 1; @endphp
 												@foreach(json_decode($Transaction->document) as $split)
 													<div class="col-txt">
-														<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-															<img src="{{asset('public/images/pdf.png')}}">
+														<a href="{{asset('storage/'.$split)}}" target="_blank">
+															<img src="{{asset('images/pdf.png')}}">
 															<p class="pdf-text"> {{__('Invoices')}} ({{$snn}})</p>
 														</a>
 													</div>
@@ -329,8 +329,8 @@
 												@php $snn = 1; @endphp
 												@foreach(json_decode($Transaction->condominium) as $split)
 													<div class="col-txt">
-														<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-															<img src="{{asset('public/images/pdf.png')}}">
+														<a href="{{asset('storage/'.$split)}}" target="_blank">
+															<img src="{{asset('images/pdf.png')}}">
 															<p class="pdf-text"> {{__('Invoices')}} ({{$snn}})</p>
 														</a>
 													</div>
@@ -357,8 +357,8 @@
 												@php $snn = 1; @endphp
 												@foreach(json_decode($Transaction->other) as $split)
 													<div class="col-txt">
-														<a href="{{asset('public/storage/'.$split)}}" target="_blank">
-															<img src="{{asset('public/images/pdf.png')}}">
+														<a href="{{asset('storage/'.$split)}}" target="_blank">
+															<img src="{{asset('images/pdf.png')}}">
 															<p class="pdf-text"> {{__('Invoices')}} ({{$snn}})</p>
 														</a>
 													</div>

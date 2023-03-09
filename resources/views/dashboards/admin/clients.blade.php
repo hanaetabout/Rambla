@@ -27,11 +27,11 @@
 									<tr>
 										<td> {{$i}}</td>
 										<td>{{$row->name}}</td>
-										<td><img src="{{asset('public/images/Message.png')}}"> {{$row->email}}</td>
+										<td><img src="{{asset('images/Message.png')}}"> {{$row->email}}</td>
 										<td><i class="fa-solid fa-phone"></i> {{$row->phone}}</td>
 										<td>{{$row->nif}}</td>
 										<td><i class="fa-sharp fa-solid fa-location-dot"></i> {{$row->tax_address}}</td>
-										<td><img src="http://rambla.pt/crm/public/images/Calendar.png"> {{$row->created_at}}</td>
+										<td><img src="{{asset('images/Calendar.png')}}"> {{$row->created_at}}</td>
 										
 									</tr>
 									@php $i++; @endphp

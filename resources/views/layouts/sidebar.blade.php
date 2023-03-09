@@ -1,13 +1,13 @@
 <div class="cstm-row toggle-menu">
-	<img class="dash" src="{{asset('public/images/dash.png')}}">
-	<a href="#" class="sidebar-logo"><img src="{{asset('public/images/black-logo.png')}}"></a>
+	<img class="dash" src="{{asset('images/dash.png')}}">
+	<a href="#" class="sidebar-logo"><img src="{{asset('images/black-logo.png')}}"></a>
 	<i class="fa-solid fa-magnifying-glass"></i>
 </div>
 <div class="sidebar">
 
 	<div class="side-logo-div text-center">
 
-		<a href="{{(Auth::user()->role_id == 1)?route('admin.dashboard'): route('user.dashboard')}}" class="sidebar-logo"><img src="{{asset('public/images/black-logo.png')}}"></a>
+		<a href="{{(Auth::user()->role_id == 1)?route('admin.dashboard'): route('user.dashboard')}}" class="sidebar-logo"><img src="{{asset('images/black-logo.png')}}"></a>
 	
 	</div>
 	<div id="partner-table_filter" class="dataTables_filter side-search">
@@ -16,7 +16,7 @@
 	<ul class="side-menu">
 		<li class="{{ Route::currentRouteName()=='admin.dashboard' || Route::currentRouteName()=='user.dashboard' || Route::currentRouteName()=='admin.propertyDetail' || Route::currentRouteName()=='user.propertyDetail' ? 'active' : '' }}">
 		
-			<a href="{{(Auth::user()->role_id == 1)?route('admin.dashboard'): route('user.dashboard')}}" class="dashboard "><img src="{{asset('public/images/dash.png')}}">
+			<a href="{{(Auth::user()->role_id == 1)?route('admin.dashboard'): route('user.dashboard')}}" class="dashboard "><img src="{{asset('images/dash.png')}}">
 			Dashboard </a>
 			
 		</li>
@@ -37,7 +37,7 @@
 		</li>
 		
 		<li class="logout">
-			<img src="{{asset('public/storage/'.Auth::user()->avatar)}}">{{Auth::user()->name}} <i class="fa-solid fa-right-from-bracket" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" src="{{asset('public/images/Logout.png')}}"></i>
+			<img src="{{asset('storage/'.Auth::user()->avatar)}}">{{Auth::user()->name}} <i class="fa-solid fa-right-from-bracket" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" src="{{asset('images/Logout.png')}}"></i>
 			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 				 {{ csrf_field() }}
 			</form>

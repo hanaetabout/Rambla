@@ -5,7 +5,7 @@
 	<div class="main-page login-page">
 		<div class="row justify-content-center">
 			<div class="col-12 col-md-5 col-xl-3 col-lg-4 left-col">
-				<img src="{{asset('public/images/logo.png')}} ">
+				<img src="{{asset('images/logo.png')}} ">
 				<form method="POST" class="login-form" action="{{ route('login') }}">
 				
 				<x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
@@ -56,7 +56,7 @@
 				</form>
 			</div>
 			<div class="col-9 col-md-7 col-xl-9 col-lg-8 right-col">
-				<img class="img-fluid" src="{{asset('public/images/Illustration.png')}} ">
+				<img class="img-fluid" src="{{asset('images/Illustration.png')}} ">
 			</div>
 		</div>
 	</div>

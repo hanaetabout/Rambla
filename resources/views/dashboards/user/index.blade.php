@@ -11,7 +11,7 @@
 				<div class="chart">
 					<div class="left-img">
 						<div class="txt">
-							<img src="{{asset('public/images/money.png')}}">
+							<img src="{{asset('images/money.png')}}">
 							<h5>Total Revenue<br><span class="total">
                             @if(!empty($property_ids))
                             @php $revenue = DB::table('transaction')->whereIn('property_id',explode(',',$property_ids))->where('type',1)->sum('price'); @endphp
@@ -21,7 +21,7 @@
 					</div>
 					<div class="right-img">
 						<div class="txt">
-							<img src="{{asset('public/images/icon.png')}}">
+							<img src="{{asset('images/icon.png')}}">
 							<h5>Total Expenses<br><span class="total">
 							@if(!empty($property_ids))
                           	@php $expenses = DB::table('transaction')->whereIn('property_id',explode(',',$property_ids))->where('type',2)->sum('price'); @endphp 
@@ -120,8 +120,8 @@
 									 <p class="card-text">Ervig Ervig</p>
 								  </div>
 								 <div class="right-cntnt">
-								   <h5 class="card-title"><img src="{{asset('public/images/dollar.png')}}">34,666€</h5>
-								   <p class="card-text europe"><img src="{{asset('public/images/europe.png')}}">346€</p>
+								   <h5 class="card-title"><img src="{{asset('images/dollar.png')}}">34,666€</h5>
+								   <p class="card-text europe"><img src="{{asset('images/europe.png')}}">346€</p>
 								 </div>
 							  </div>
 						 </div>
@@ -138,8 +138,8 @@
 										<p class="card-text">Ervig Ervig</p>
 									</div>
 									<div class="right-cntnt">
-									   <h5 class="card-title"><img src="{{asset('public/images/dollar.png')}}">34,666€</h5>
-										<p class="card-text europe"><img src="{{asset('public/images/europe.png')}}">346€</p>
+									   <h5 class="card-title"><img src="{{asset('images/dollar.png')}}">34,666€</h5>
+										<p class="card-text europe"><img src="{{asset('images/europe.png')}}">346€</p>
 									</div>
 							    </div>
 							</div>
@@ -156,8 +156,8 @@
 									<p class="card-text ">Ervig Ervig</p>
 								</div>
 								 <div class="right-cntnt">
-								    <h5 class="card-title"><img src="{{asset('public/images/dollar.png')}}">34,666€</h5>
-									<p class="card-text europe"><img src="{{asset('public/images/europe.png')}}">346€</p>
+								    <h5 class="card-title"><img src="{{asset('images/dollar.png')}}">34,666€</h5>
+									<p class="card-text europe"><img src="{{asset('images/europe.png')}}">346€</p>
 							    </div>
 							  </div>
 						    </div>

@@ -10,9 +10,11 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <!-- Scripts -->
+        <!-- Scripts 
 		<link rel="stylesheet" href="{{ asset('public/build/assets/app-67dcdfd2.css') }}"> 
-		<script src="{{ asset('public/build/assets/app-903266c5.js') }}"></script>
+		<script src="{{ asset('public/build/assets/app-903266c5.js') }}"></script>-->
+				<!-- Scripts -->
+		@vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

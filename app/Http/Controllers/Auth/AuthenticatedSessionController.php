@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
 		if(Auth::user()->approve == 0){		
 			auth()->logout();
 			return abort(403, 'The account you have on this site was not approved yet!.');
-		}
+		} 
 			
 				
         if(Auth::user()->role_id == 1){
