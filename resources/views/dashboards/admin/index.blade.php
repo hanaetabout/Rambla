@@ -288,7 +288,7 @@
 														@endif
 													</div>
 													<div class="users">
-														<img src="{{asset('storage/'.$sender->avatar)}}"/>
+														<img src="{{asset('images/'.$sender->avatar)}}"/>
 														<div class="date">
 															<p>{{date('d M, Y / H:i A',strtotime($chat->created_at))}}</p>
 															<i class="fa-solid fa-ellipsis"></i>

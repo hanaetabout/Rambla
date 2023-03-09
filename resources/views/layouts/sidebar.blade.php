@@ -37,7 +37,7 @@
 		</li>
 		
 		<li class="logout">
-			<img src="{{asset('storage/'.Auth::user()->avatar)}}">{{Auth::user()->name}} <i class="fa-solid fa-right-from-bracket" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" src="{{asset('images/Logout.png')}}"></i>
+			<img src="{{asset('images/'.Auth::user()->avatar)}}">{{Auth::user()->name}} <i class="fa-solid fa-right-from-bracket" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" src="{{asset('images/Logout.png')}}"></i>
 			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 				 {{ csrf_field() }}
 			</form>
